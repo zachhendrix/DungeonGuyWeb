@@ -1,5 +1,5 @@
-﻿using static Data.Character.CharacterJob;
-using static Data.Character.CharacterRace;
+﻿using static Data.Character.Job;
+using static Data.Character.Race;
 
 namespace Data.Character
 {
@@ -9,7 +9,7 @@ namespace Data.Character
         public Job Job { get; set; }
         public Race Race { get; set; }
         public Stats Stats { get; set; }
-        public List<Item> Inventory { get; set; }
+        public Inventory Inventory { get; set; }
 
         public Character(string name, Job job, Race race)
         {
@@ -17,27 +17,15 @@ namespace Data.Character
             Job = job;
             Race = race;
             Stats = new Stats();
-            Inventory = new List<Item>();
+            Inventory = new Inventory();
         }
     }
 
-    public class Stats
-    {
-        private int health { get; set; }
-        private int mana { get; set; }
-        private int stamina { get; set; }
-        private int strength { get; set; }
-        private int dexterity { get; set; }
-        private int constitution { get; set; }
-        private int intelligence { get; set; }
-        private int wisdom { get; set; }
-        private int charisma { get; set; }
-    }
 
     public class Item
     {
-        public string? name { get; set; }
-        public string? description { get; set; }
-        public decimal weight { get; set; }
+        public string? Name { get; set; }
+        public string? Description { get; set; }
+        public decimal Weight { get; set; }
     }
 }

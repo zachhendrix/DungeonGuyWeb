@@ -1,8 +1,8 @@
 ﻿namespace Data.Character
 {   
-    public class CharacterJob
+    public class Job
     {
-        public enum Job
+        public enum Jobs
         {
             Warrior,
             Mage,

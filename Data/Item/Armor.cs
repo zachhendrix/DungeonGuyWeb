@@ -1,13 +1,22 @@
-﻿namespace Data.Item
-{
-    public class Armor : Item
-    {
-        public int Defense { get; set; }
-        public string Material { get; set; } // e.g., "Leather", "Steel", etc.
+﻿using System.Xml.Linq;
 
-        public Armor()
+namespace Data.Item
+{
+    public class Armor(string name, string description, float weight, int defense, float condition, Armor.MaterialTypeEnum material) 
+               : Item(name, description, weight, ItemType.Armor)
+    {
+        public int Defense { get; set; } = defense;
+        public float Condition { get; set; } = condition;
+        public MaterialTypeEnum Material { get; set; } = material;
+
+        // Enum for Material Types
+        public enum MaterialTypeEnum
         {
-            Type = "Armor"; // Set the Type property to "Armor"
+            Bronze,
+            Iron,
+            Steel,
+            Adamantium,
+            Mithril
         }
     }
 }

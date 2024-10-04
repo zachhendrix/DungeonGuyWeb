@@ -1,8 +1,8 @@
 ﻿namespace Data.Character
 {
-    public class CharacterRace
+    public class Race
     {
-        public enum Race
+        public enum Races
         {
             Human,
             Elf,
