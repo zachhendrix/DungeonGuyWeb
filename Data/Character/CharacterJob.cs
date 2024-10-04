@@ -1,6 +1,6 @@
 ﻿namespace Data.Character
 {   
-    public class CharacterClass
+    public class CharacterJob
     {
         public enum Job
         {

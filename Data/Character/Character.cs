@@ -1,37 +1,37 @@
-﻿using static Data.Character.CharacterClass;
+﻿using static Data.Character.CharacterJob;
 using static Data.Character.CharacterRace;
 
 namespace Data.Character
 {
     public class Character
     {
-        public string name { get; set; }
-        public Job job { get; set; }
-        public Race race { get; set; }
-        public Stats stats { get; set; }
-        public List<Item> inventory { get; set; }
+        public string Name { get; set; }
+        public Job Job { get; set; }
+        public Race Race { get; set; }
+        public Stats Stats { get; set; }
+        public List<Item> Inventory { get; set; }
 
-        public Character()
+        public Character(string name, Job job, Race race)
         {
-            name = name;
-            job = new Job();
-            race = new Race();
-            stats = new Stats();
-            inventory = new List<Item>();
+            Name = name;
+            Job = job;
+            Race = race;
+            Stats = new Stats();
+            Inventory = new List<Item>();
         }
     }
 
     public class Stats
     {
-        public int health { get; set; }
-        public int mana { get; set; }
-        public int stamina { get; set; }
-        public int strength { get; set; }
-        public int dexterity { get; set; }
-        public int constitution { get; set; }
-        public int intelligence { get; set; }
-        public int wisdom { get; set; }
-        public int charisma { get; set; }
+        private int health { get; set; }
+        private int mana { get; set; }
+        private int stamina { get; set; }
+        private int strength { get; set; }
+        private int dexterity { get; set; }
+        private int constitution { get; set; }
+        private int intelligence { get; set; }
+        private int wisdom { get; set; }
+        private int charisma { get; set; }
     }
 
     public class Item

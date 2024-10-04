@@ -1,20 +1,19 @@
-﻿namespace Data.Item
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace Data.Item
 {
     public class Weapon : Item
     {
-        public int damage { get; set; }
-        public string damageType { get; set; } // e.g., "Slashing", "Piercing", etc.
+        public int Damage { get; set; }
+        public enum DamageType { get; set; } // e.g., "Slashing", "Piercing", etc.
 
         public Weapon()
         {
-            type = "Weapon"; // Set the Type property to "Weapon"
-        }
-
-        private enum DamageType
-        {
-            Slashing,
-            Piercing,
-            Blunt
+            Type = "Weapon"; // Set the Type property to "Weapon"
         }
     }
 }
