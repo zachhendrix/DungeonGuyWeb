@@ -1,5 +1,5 @@
-﻿namespace DungeonGuyConsole.Character
-{
+﻿namespace Data.Character
+{   
     public class CharacterClass
     {
         public enum Job

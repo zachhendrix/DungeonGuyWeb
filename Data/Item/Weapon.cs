@@ -1,19 +1,20 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace DungeonGuyConsole.Item
+﻿namespace Data.Item
 {
     public class Weapon : Item
     {
-        public int Damage { get; set; }
-        public string DamageType { get; set; } // e.g., "Slashing", "Piercing", etc.
+        public int damage { get; set; }
+        public string damageType { get; set; } // e.g., "Slashing", "Piercing", etc.
 
         public Weapon()
         {
-            Type = "Weapon"; // Set the Type property to "Weapon"
+            type = "Weapon"; // Set the Type property to "Weapon"
+        }
+
+        private enum DamageType
+        {
+            Slashing,
+            Piercing,
+            Blunt
         }
     }
 }

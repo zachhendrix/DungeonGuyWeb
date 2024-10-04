@@ -1,42 +1,43 @@
-﻿using static DungeonGuyConsole.Character.CharacterRace;
-using static DungeonGuyConsole.Character.CharacterClass;
-namespace DungeonGuyConsole.Character
+﻿using static Data.Character.CharacterClass;
+using static Data.Character.CharacterRace;
+
+namespace Data.Character
 {
     public class Character
     {
-        public string Name { get; set; }
-        public Job Job { get; set; }
-        public Race Race { get; set; }
-        public Stats Stats { get; set; }
-        public List<Item> Inventory { get; set; }
+        public string name { get; set; }
+        public Job job { get; set; }
+        public Race race { get; set; }
+        public Stats stats { get; set; }
+        public List<Item> inventory { get; set; }
 
         public Character()
         {
-            Name = Name;
-            Job = new Job();
-            Race = new Race();
-            Stats = new Stats();
-            Inventory = new List<Item>();
+            name = name;
+            job = new Job();
+            race = new Race();
+            stats = new Stats();
+            inventory = new List<Item>();
         }
     }
 
     public class Stats
     {
-        public int Health { get; set; }
-        public int Mana { get; set; }
-        public int Stamina { get; set; }
-        public int Strength { get; set; }
-        public int Dexterity { get; set; }
-        public int Constitution { get; set; }
-        public int Intelligence { get; set; }
-        public int Wisdom { get; set; }
-        public int Charisma { get; set; }
+        public int health { get; set; }
+        public int mana { get; set; }
+        public int stamina { get; set; }
+        public int strength { get; set; }
+        public int dexterity { get; set; }
+        public int constitution { get; set; }
+        public int intelligence { get; set; }
+        public int wisdom { get; set; }
+        public int charisma { get; set; }
     }
 
     public class Item
     {
-        public string Name { get; set; }
-        public string Description { get; set; }
-        public decimal Weight { get; set; }
+        public string? name { get; set; }
+        public string? description { get; set; }
+        public decimal weight { get; set; }
     }
 }

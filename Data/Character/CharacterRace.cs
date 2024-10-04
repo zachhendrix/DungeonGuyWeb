@@ -1,4 +1,4 @@
-﻿namespace DungeonGuyConsole.Character
+﻿namespace Data.Character
 {
     public class CharacterRace
     {

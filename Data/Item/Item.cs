@@ -1,16 +1,10 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace DungeonGuyConsole.Item
+﻿namespace Data.Item
 {
     public class Item
     {
-        public string Name { get; set; }
-        public string Description { get; set; }
-        public decimal Weight { get; set; }
-        public string Type {  get; set; }
+        public string? name { get; set; }
+        public string? description { get; set; }
+        public decimal? weight { get; set; }
+        public string? type {  get; set; }
     }
 }
