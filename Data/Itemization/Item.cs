@@ -1,15 +1,15 @@
-﻿namespace Data.Item
+﻿namespace Data.Itemization
 {
-    public class Item
+    public class ItemObject
     {
         public string? Name { get; set; }
         public string? Description { get; set; }
         public float? Weight { get; set; }
         public ItemType? Type { get; set; }
 
-        public Item() { }
+        public ItemObject() { }
 
-        public Item(string name, string description, float? weight, ItemType type)
+        public ItemObject(string name, string description, float? weight, ItemType type)
         {
             Name = name;
             Description = description;

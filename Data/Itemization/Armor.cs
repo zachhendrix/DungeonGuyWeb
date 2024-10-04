@@ -1,9 +1,7 @@
-﻿using System.Xml.Linq;
-
-namespace Data.Item
+﻿namespace Data.Itemization
 {
     public class Armor(string name, string description, float weight, int defense, float condition, Armor.MaterialTypeEnum material) 
-               : Item(name, description, weight, ItemType.Armor)
+               : ItemObject(name, description, weight, ItemType.Armor)
     {
         public int Defense { get; set; } = defense;
         public float Condition { get; set; } = condition;
