@@ -92,7 +92,6 @@ namespace Character.Equipment
                     break;
             }
 
-            // Item type or slot type is incompatible
             return false;
         }
 

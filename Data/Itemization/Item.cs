@@ -21,6 +21,7 @@
         {
             Weapon,
             Armor,
+            Ring,
             Potion
         }
     }

@@ -1,4 +1,7 @@
-﻿namespace Data.Itemization
+﻿using Character.Equipment;
+using static Character.Equipment.Equipment;
+
+namespace Data.Itemization
 {
     public class Weapon : ItemObject
     {
@@ -7,14 +10,15 @@
         public DamageTypeEnum DamageType { get; }
         public PhysicalDamageType? PhysicalType { get; }
         public MagicalDamageType? MagicalType { get; }
+        public Equipment.Slot Slot { get; set; }
 
-        public Weapon(string name, string description, float weight, int damage, float condition, DamageTypeEnum damageType, PhysicalDamageType? physicalType = null, MagicalDamageType? magicalType = null)
+        public Weapon(string name, string description, float weight, int damage, float condition, Equipment.Slot slot, DamageTypeEnum damageType, PhysicalDamageType? physicalType = null, MagicalDamageType? magicalType = null)
             : base(name, description, weight, ItemType.Weapon)
         {
             Damage = damage;
             Condition = condition;
             DamageType = damageType;
-
+            Slot = slot;
             PhysicalType = damageType == DamageTypeEnum.Physical ? physicalType : null;
             MagicalType = damageType == DamageTypeEnum.Magical ? magicalType : null;
         }
