@@ -2,15 +2,13 @@
 
 namespace Data.Itemization
 {
-    public class Armor(string name, string description, float weight, int defense, float condition, Armor.MaterialTypeEnum material, Equipment.Slot slot) 
-               : ItemObject(name, description, weight, ItemType.Armor)
+    public class Armor : ItemObject
     {
-        public int Defense { get; set; } = defense;
-        public float Condition { get; set; } = condition;
-        public MaterialTypeEnum Material { get; set; } = material;
-        public Equipment.Slot Slot { get; set; } = slot;
+        public int Defense { get; set; }
+        public float Condition { get; set; }
+        public MaterialTypeEnum Material { get; set; }
+        public Equipment.Slot Slot { get; set; }
 
-        // Enum for Material Types
         public enum MaterialTypeEnum
         {
             Bronze,
@@ -18,6 +16,20 @@ namespace Data.Itemization
             Steel,
             Adamantium,
             Mithril
+        }
+
+        public Armor(string name,
+            string description,
+            float weight, int defense,
+            float condition,
+            MaterialTypeEnum material,
+            Equipment.Slot slot)
+          : base(name, description, weight, ItemType.Armor)
+        {
+            Defense = defense;
+            Condition = condition;
+            Material = material;
+            Slot = slot;
         }
     }
 }
