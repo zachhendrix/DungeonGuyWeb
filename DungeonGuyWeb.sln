@@ -5,7 +5,7 @@ VisualStudioVersion = 17.10.35122.118
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DungeonGuyWeb", "DungeonGuyWeb\DungeonGuyWeb.csproj", "{B91A2A93-18FC-4CD0-A341-73AE0D8F0FA7}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Data", "Data\Data.csproj", "{EB78C7B9-9DA7-45CF-AF33-8002E4AE814F}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Data", "Data\Data.csproj", "{EB78C7B9-9DA7-45CF-AF33-8002E4AE814F}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
