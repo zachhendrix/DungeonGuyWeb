@@ -1,4 +1,4 @@
-﻿using Character.Equipment;
+﻿using Data.Character;
 
 namespace Data.Itemization
 {
@@ -18,13 +18,8 @@ namespace Data.Itemization
             Mithril
         }
 
-        public Armor(string name,
-            string description,
-            float weight, int defense,
-            float condition,
-            MaterialTypeEnum material,
-            Equipment.Slot slot)
-          : base(name, description, weight, ItemType.Armor)
+        public Armor(string name, string description, float weight, int baseValue, int defense, float condition, MaterialTypeEnum material, Equipment.Slot slot)
+          : base(name, description, weight, baseValue, ItemType.Armor)
         {
             Defense = defense;
             Condition = condition;

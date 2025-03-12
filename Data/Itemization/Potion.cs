@@ -5,8 +5,8 @@
         public EffectCategory Effect { get; set; }
         public int Duration { get; set; }
 
-        public Potion(string name, string description, float weight, EffectCategory effect)
-            : base(name, description, weight, ItemType.Potion)
+        public Potion(string name, string description, float weight, int baseValue, EffectCategory effect)
+            : base(name, description, weight, baseValue, ItemType.Potion)
         {
             Effect = effect;
         }

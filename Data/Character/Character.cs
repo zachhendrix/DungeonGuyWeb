@@ -1,6 +1,4 @@
-﻿using static Data.Character.Job;
-using static Data.Character.Race;
-
+﻿
 namespace Data.Character
 {
     public class Character
@@ -9,6 +7,7 @@ namespace Data.Character
         public Job Job { get; set; }
         public Race Race { get; set; }
         public Stats Stats { get; set; }
+        public Equipment Eqauipment { get; set; }
         public Inventory Inventory { get; set; }
 
         public Character(string name, Job job, Race race)

@@ -1,6 +1,6 @@
 ﻿using Data.Itemization;
 
-namespace Character.Equipment
+namespace Data.Character
 {
     public class Equipment
     {
@@ -125,7 +125,6 @@ namespace Character.Equipment
                     return true;
             }
 
-            // Slot not recognized
             return false;
         }
 
