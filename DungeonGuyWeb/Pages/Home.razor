@@ -1,2 +1,28 @@
 ﻿@page "/"
 @using MudBlazor
+@using Data.Character
+
+<MudPaper>
+    <MudText>Enter your name:</MudText>
+    <MudTextField T="string"></MudTextField>
+    <MudText>What kind of being are you?</MudText>
+    <MudSelect T="Race" @bind-Value="selectedRace">
+        @foreach (Race race in Enum.GetValues<Race>())
+        {
+            <MudSelectItem T="Race" Value="@race">@race</MudSelectItem>
+        }
+    </MudSelect>
+    <MudText>What dp you specialize in?</MudText>
+    <MudSelect T="Job" @bind-Value="selectedJob">
+        @foreach (Job job in Enum.GetValues<Job>())
+        {
+            <MudSelectItem T="Job" Value="@job">@job</MudSelectItem>
+        }
+    </MudSelect>
+
+</MudPaper>
+
+@code {
+    new Race selectedRace { get; set; } = Race.Human;
+    new Job selectedJob { get; set; } = Job.Warrior;
+}
