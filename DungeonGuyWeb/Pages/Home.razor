@@ -5,18 +5,26 @@
 <MudGrid>
 
     <MudItem xs="6">
-        <MudPaper>
+        <MudPaper Elevation="0">
+            
             <MudText>Enter your name:</MudText>
-            <MudTextField T="string"></MudTextField>
+            <MudTextField T="string" 
+                @bind-Value="Name" 
+                Required="true"
+                Variant="Variant.Outlined"
+                MaxLength="20" 
+                Label="Enter your name" 
+                HelperText="@($"{(Name?.Length ?? 0)}/20 characters used")" />
+            
             <MudText>What kind of being are you?</MudText>
-            <MudSelect Class="selectbox" T="Race" @bind-Value="selectedRace">
+            <MudSelect T="Race" @bind-Value="selectedRace" Required="true" Variant="Variant.Outlined" Class="selectbox">
                 @foreach (Race race in Enum.GetValues<Race>())
                 {
                     <MudSelectItem T="Race" Value="@race">@race</MudSelectItem>
                 }
             </MudSelect>
             <MudText>What dp you specialize in?</MudText>
-            <MudSelect T="Job" @bind-Value="selectedJob">
+            <MudSelect T="Job" @bind-Value="selectedJob" Required="true" Variant="Variant.Outlined" Class="selectbox">
                 @foreach (Job job in Enum.GetValues<Job>())
                 {
                     <MudSelectItem T="Job" Value="@job">@job</MudSelectItem>
@@ -32,6 +40,10 @@
 </MudGrid>
 
 @code {
-    new Race selectedRace { get; set; } = Race.Human;
-    new Job selectedJob { get; set; } = Job.Warrior;
+    string? Name { get; set; }
+    Race selectedRace { get; set; }
+    Job selectedJob { get; set; }
+
+
+
 }

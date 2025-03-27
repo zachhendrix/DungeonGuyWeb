@@ -8,8 +8,6 @@
         public int? BaseValue { get; set; }
         public ItemType Type { get; set; }
 
-        public ItemObject() { }
-
         public ItemObject(string name, string description, float? weight, int baseValue, ItemType type)
         {
             Name = name;

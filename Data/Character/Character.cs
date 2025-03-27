@@ -7,7 +7,7 @@ namespace Data.Character
         public Job Job { get; set; }
         public Race Race { get; set; }
         public Stats Stats { get; set; }
-        public Equipment Eqauipment { get; set; }
+        public Equipment Equipment { get; set; }
         public Inventory Inventory { get; set; }
 
         public Character(string name, Job job, Race race)
@@ -16,6 +16,7 @@ namespace Data.Character
             Job = job;
             Race = race;
             Stats = new Stats();
+            Equipment = new Equipment();
             Inventory = new Inventory();
         }
     }
