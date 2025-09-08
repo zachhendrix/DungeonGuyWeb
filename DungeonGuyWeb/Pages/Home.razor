@@ -23,7 +23,7 @@
                     <MudSelectItem T="Race" Value="@race">@race</MudSelectItem>
                 }
             </MudSelect>
-            <MudText>What dp you specialize in?</MudText>
+            <MudText>What do you specialize in?</MudText>
             <MudSelect T="Job" @bind-Value="selectedJob" Required="true" Variant="Variant.Outlined" Class="selectbox">
                 @foreach (Job job in Enum.GetValues<Job>())
                 {
@@ -31,6 +31,7 @@
                 }
             </MudSelect>
         </MudPaper>
+        <MudButton Variant="Variant.Filled" Color="Color.Primary" Disabled="@(string.IsNullOrWhiteSpace(Name))">Create Character</MudButton>
     </MudItem>
 
     <MudItem xs="6">
