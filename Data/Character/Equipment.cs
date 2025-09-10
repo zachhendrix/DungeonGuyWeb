@@ -76,15 +76,17 @@ namespace Data.Character
                         return true;
                     }
                     break;
+
                 case Slot.RightRing:
-                    if (item is Armor)
+                    if (item is Ring)
                     {
                         RightRing = item;
                         return true;
                     }
                     break;
+
                 case Slot.LeftRing:
-                    if (item is Armor)
+                    if (item is Ring)
                     {
                         LeftRing = item;
                         return true;
@@ -118,10 +120,10 @@ namespace Data.Character
                     Feet = null;
                     return true;
                 case Slot.RightRing:
-                    Feet = null;
+                    RightRing = null;
                     return true;
                 case Slot.LeftRing:
-                    Feet = null;
+                    LeftRing = null;
                     return true;
             }
 
