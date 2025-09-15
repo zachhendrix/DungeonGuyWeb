@@ -61,5 +61,7 @@
         };
 
         public static RaceData Get(Race race) => _raceData[race];
+
+        public static IEnumerable<(Race Id, RaceData Data)> All() => _raceData.Select(kv => (kv.Key, kv.Value));
     }
 }

@@ -83,5 +83,6 @@
         };
 
         public static JobData Get(Job job) => _jobData[job];
+        public static IEnumerable<(Job Id, JobData Data)> All() => _jobData.Select(kv => (kv.Key, kv.Value));
     }
 }

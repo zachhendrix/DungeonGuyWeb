@@ -3,7 +3,7 @@
     public class Character
     {
         private static readonly Character _character = new Character();
-        public static Character character => _character;
+        public static Character Instance => _character;
 
         public string Name { get; set; }
         public Job Job { get; set; }

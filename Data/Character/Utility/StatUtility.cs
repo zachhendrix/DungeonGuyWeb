@@ -6,10 +6,26 @@ namespace Data.Character.Utility
     {
         public static void InitializeStats()
         {
-            RaceData raceData = RaceDatabase.Get(character.Race);
-            JobData jobData = JobDatabase.Get(character.Job);
-            SetStats(character.Stats, raceData.Stats);
-            ModStats(character.Stats, jobData.Stats);
+            var race = RaceDatabase.Get(Instance.Race).Stats;
+            var job = JobDatabase.Get(Instance.Job).Stats;
+
+            // Build a new combined stats object and assign it ONCE
+            Instance.Stats = new Stats(
+                race.Health + job.Health,
+                race.Mana + job.Mana,
+                race.Stamina + job.Stamina,
+                race.Strength + job.Strength,
+                race.Dexterity + job.Dexterity,
+                race.Constitution + job.Constitution,
+                race.Intelligence + job.Intelligence,
+                race.Wisdom + job.Wisdom,
+                race.Charisma + job.Charisma
+            );
+        }
+
+        public static void ClearStats()
+        {
+            Instance.Stats = new Stats(0,0,0,0,0,0,0,0,0);
         }
 
         public static void SetStats(Stats baseStats, Stats modStats)

@@ -1,0 +1,85 @@
+﻿@page "/"
+@using Data.Character
+@using MudBlazor
+
+<MudGrid Spacing="3">
+    <!-- adds spacing between items -->
+    <!-- Left Column: Character creation form -->
+    <MudItem xs="8">
+        <MudPaper Elevation="0" Class="pa-4">
+            <!-- add padding -->
+            <MudText Typo="Typo.h6">Character Setup</MudText>
+
+            <MudText>Enter your name:</MudText>
+            <MudTextField T="string"
+                          @bind-Value="Character.Instance.Name"
+                          Immediate="true" DebounceInterval="0"
+                          Required="true" Variant="Variant.Outlined"
+                          MaxLength="20"
+                          Label="Enter your name"
+                          HelperText="@($"{NameLength}/20 characters used")" />
+
+            <MudText class="mt-4">What kind of being are you?</MudText>
+            <MudSelect T="Race"
+                       @bind-Value="SelectedRace"
+                       @bind-Value:event="onchange"
+                       ValueChanged="OnRaceChanged"
+                       Variant="Variant.Outlined"
+                       Required="true">
+                @foreach (var (id, data) in RaceDatabase.All())
+                {
+                    <MudSelectItem T="Race" Value="@id">@data.Name</MudSelectItem>
+                }
+            </MudSelect>
+
+            <MudText class="mt-4">What do you specialize in?</MudText>
+            <MudSelect T="Job"
+                       @bind-Value="SelectedJob"
+                       @bind-Value:event="onchange"
+                       ValueChanged="OnJobChanged"
+                       Variant="Variant.Outlined"
+                       Required="true">
+                @foreach (var (id, data) in JobDatabase.All())
+                {
+                    <MudSelectItem T="Job" Value="@id">@data.Name</MudSelectItem>
+                }
+            </MudSelect>
+
+            <MudButton Variant="Variant.Filled"
+                       Color="Color.Primary"
+                       Disabled="@IsCreateDisabled"
+                       OnClick="CreateCharacter"
+                       Class="mt-4">
+                Create Character
+            </MudButton>
+        </MudPaper>
+    </MudItem>
+
+    <!-- Right Column: Extra info / placeholder -->
+    <MudItem xs="4">
+        <MudPaper Class="pa-4">
+            <MudText Typo="Typo.h6">Stat Preview</MudText>
+
+            <MudSimpleTable Dense="true" Bordered="true" Class="mt-2">
+                <thead>
+                    <tr>
+                        <th>Stat</th>
+                        <th>Value</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr><td>HP</td><td>@Character.Instance.Stats.Health</td></tr>
+                    <tr><td>Mana</td><td>@Character.Instance.Stats.Mana</td></tr>
+                    <tr><td>Stamina</td><td>@Character.Instance.Stats.Stamina</td></tr>
+                    <tr><td>Strength</td><td>@Character.Instance.Stats.Strength</td></tr>
+                    <tr><td>Agility</td><td>@Character.Instance.Stats.Dexterity</td></tr>
+                    <tr><td>Defense</td><td>@Character.Instance.Stats.Constitution</td></tr>
+                    <tr><td>Intelligence</td><td>@Character.Instance.Stats.Intelligence</td></tr>
+                    <tr><td>Wisdom</td><td>@Character.Instance.Stats.Wisdom</td></tr>
+                    <tr><td>Luck</td><td>@Character.Instance.Stats.Charisma</td></tr>
+                </tbody>
+            </MudSimpleTable>
+        </MudPaper>
+
+    </MudItem>
+</MudGrid>
