@@ -25,5 +25,17 @@
             Wisdom = wisdom;
             Charisma = charisma;
         }
+
+        public record StatsView(
+            int Health,
+            int Mana,
+            int Stamina,
+            int Strength,
+            int Dexterity,
+            int Constitution,
+            int Intelligence,
+            int Wisdom,
+            int Charisma
+        );
     }
 }

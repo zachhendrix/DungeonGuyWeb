@@ -2,6 +2,7 @@
 {
     public enum Race
     {
+        None,
         Human,
         Elf,
         Dwarf,
@@ -39,6 +40,7 @@
     {
         private static readonly Dictionary<Race, RaceData> _raceData = new()
         {
+            {Race.None,     new RaceData("None",     new Stats(0, 0, 0, 0, 0, 0, 0, 0, 0))},
             {Race.Human,     new RaceData("Human",     new Stats(100, 50, 70, 12, 12, 10, 10, 10, 10))},
             {Race.Elf,       new RaceData("Elf",       new Stats(80, 80, 50,  8, 14,  8, 14, 10, 10))},
             {Race.Dwarf,     new RaceData("Dwarf",     new Stats(130, 30, 80, 12,  8, 12,  8, 12, 12))},

@@ -1,4 +1,5 @@
 ﻿using static Data.Character.Character;
+using static Data.Character.Stats;
 
 namespace Data.Character.Utility
 {
@@ -44,6 +45,22 @@ namespace Data.Character.Utility
             baseStats.Intelligence += modStats.Intelligence;
             baseStats.Wisdom += modStats.Wisdom;
             baseStats.Charisma += modStats.Charisma;
+        }
+
+        public static StatsView GetStatsView()
+        {
+            var s = Instance.Stats;
+            return new StatsView(
+                s.Health,
+                s.Mana,
+                s.Stamina,
+                s.Strength,
+                s.Dexterity,
+                s.Constitution,
+                s.Intelligence,
+                s.Wisdom,
+                s.Charisma
+            );
         }
     }
 }

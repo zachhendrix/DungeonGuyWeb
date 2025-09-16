@@ -3,11 +3,8 @@
 @using MudBlazor
 
 <MudGrid Spacing="3">
-    <!-- adds spacing between items -->
-    <!-- Left Column: Character creation form -->
     <MudItem xs="8">
         <MudPaper Elevation="0" Class="pa-4">
-            <!-- add padding -->
             <MudText Typo="Typo.h6">Character Setup</MudText>
 
             <MudText>Enter your name:</MudText>
@@ -55,11 +52,11 @@
         </MudPaper>
     </MudItem>
 
-    <!-- Right Column: Extra info / placeholder -->
+
     <MudItem xs="4">
         <MudPaper Class="pa-4">
             <MudText Typo="Typo.h6">Stat Preview</MudText>
-
+            <MudText Typo="Typo.h6">@PreviewSummary</MudText>
             <MudSimpleTable Dense="true" Bordered="true" Class="mt-2">
                 <thead>
                     <tr>
@@ -68,15 +65,15 @@
                     </tr>
                 </thead>
                 <tbody>
-                    <tr><td>HP</td><td>@Character.Instance.Stats.Health</td></tr>
-                    <tr><td>Mana</td><td>@Character.Instance.Stats.Mana</td></tr>
-                    <tr><td>Stamina</td><td>@Character.Instance.Stats.Stamina</td></tr>
-                    <tr><td>Strength</td><td>@Character.Instance.Stats.Strength</td></tr>
-                    <tr><td>Agility</td><td>@Character.Instance.Stats.Dexterity</td></tr>
-                    <tr><td>Defense</td><td>@Character.Instance.Stats.Constitution</td></tr>
-                    <tr><td>Intelligence</td><td>@Character.Instance.Stats.Intelligence</td></tr>
-                    <tr><td>Wisdom</td><td>@Character.Instance.Stats.Wisdom</td></tr>
-                    <tr><td>Luck</td><td>@Character.Instance.Stats.Charisma</td></tr>
+                    <tr><td>Health</td><td>@PreviewStats.Health</td></tr>
+                    <tr><td>Mana</td><td>@PreviewStats.Mana</td></tr>
+                    <tr><td>Stamina</td><td>@PreviewStats.Stamina</td></tr>
+                    <tr><td>Strength</td><td>@PreviewStats.Strength</td></tr>
+                    <tr><td>Dexterity</td><td>@PreviewStats.Dexterity</td></tr>
+                    <tr><td>Constitution</td><td>@PreviewStats.Constitution</td></tr>
+                    <tr><td>Intelligence</td><td>@PreviewStats.Intelligence</td></tr>
+                    <tr><td>Wisdom</td><td>@PreviewStats.Wisdom</td></tr>
+                    <tr><td>Charisma</td><td>@PreviewStats.Charisma</td></tr>
                 </tbody>
             </MudSimpleTable>
         </MudPaper>

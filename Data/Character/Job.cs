@@ -2,6 +2,7 @@
 {
     public enum Job
     {
+        None,
         Warrior,
         Mage,
         Rogue,
@@ -50,6 +51,7 @@
     {
         private static readonly Dictionary<Job, JobData> _jobData = new()
         {
+            {Job.None,     new JobData("None",           new Stats(0, 0, 0, 0,  0, 0,  0,  0,  0))},
             {Job.Warrior,     new JobData("Warrior",     new Stats(20,  0, 20, 14,  5, 11,  0,  0,  0))},
             {Job.Mage,        new JobData("Mage",        new Stats(5, 20,  5,  0,  4,  4, 12, 10,  0))},
             {Job.Rogue,       new JobData("Rogue",       new Stats(10,  5, 20,  6, 15,  6,  0,  0,  3))},
